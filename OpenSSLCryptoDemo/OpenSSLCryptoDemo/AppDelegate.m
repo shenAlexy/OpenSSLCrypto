@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NSData+OpenSSLCrypto.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,28 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /******************************** AES-256-cfb *******************************************/
+    NSString *originStr = @"https://github.com/shenAlexy";
+    NSData *originData = [originStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"origin data: %@", originData);
+    
+    //key Data
+    NSString *keyStr = @"123";
+    NSData *keyData = [keyStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //IV Data
+    NSString *IVStr = @"shenAlexy";
+    NSData *IVData = [IVStr dataUsingEncoding:NSUTF8StringEncoding];
+    
+    //encrypt Data
+    NSData *encryData = [originData AES256EncryptedDataUsingKey:keyData IVData:IVData error:nil];
+    NSLog(@"encrypt data: %@", encryData);
+    
+    //dencrypt data
+    NSData *dencryData = [encryData decryptedAES256DataUsingKey:keyData IVData:IVData error:nil];
+    NSLog(@"dencrypt data: %@", dencryData);
+    
     return YES;
 }
 
