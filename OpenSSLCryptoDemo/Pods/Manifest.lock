@@ -1,0 +1,12 @@
+PODS:
+  - OpenSSL-for-iOS (1.0.2.d.1)
+
+DEPENDENCIES:
+  - OpenSSL-for-iOS (~> 1.0.2.d.1)
+
+SPEC CHECKSUMS:
+  OpenSSL-for-iOS: d7a30add88a1969b052135adbe48452af231ed32
+
+PODFILE CHECKSUM: b8413fd9d3013f6ccf2b4677fabe1aaf9b040f9b
+
+COCOAPODS: 1.1.1

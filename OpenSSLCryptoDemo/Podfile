@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+def ios_pods
+    pod 'OpenSSL-for-iOS', '~> 1.0.2.d.1'
+
+end
+
+target 'OpenSSLCryptoDemo' do
+	platform :ios, '9.0'
+    ios_pods
+end
